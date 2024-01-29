@@ -63,4 +63,19 @@ class User extends Authenticatable
         // Save Code
         $this->save();
     }
+    // Function ResetCode OTP
+    public function resetCode(){
+
+        // Stop TimeStamps Create And Update
+        $this->timestamps = false;
+
+        // change code value to Null
+        $this->code = null;
+
+        // Expire change code value to Null
+        $this->expire_at = null;
+
+        // Save Code
+        $this->save();
+    }
 }

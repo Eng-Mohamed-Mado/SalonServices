@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Auth;
 
 use App\Models\User;
+use App\Notifications\TwoFactorCode;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
@@ -52,9 +53,11 @@ class LoginRequest extends FormRequest
 
         // Get Data User Then generate Code
         $user= User::where('email',$this->input('email'))->first();
-
         // Generate Code Use Email
         $user->generateCode();
+
+        // Send Notifications Mail
+        $user->notify(new TwoFactorCode());
 
         RateLimiter::clear($this->throttleKey());
     }
