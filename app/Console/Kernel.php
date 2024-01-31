@@ -13,6 +13,10 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         // $schedule->command('inspire')->hourly();
+        // Make Time Available
+        $schedule->command('appointments:make-available')
+        ->daily();
+
     }
 
     /**
@@ -22,6 +26,11 @@ class Kernel extends ConsoleKernel
     {
         $this->load(__DIR__.'/Commands');
 
+        // Make Time Available
+        Commands\MakeAppointmentsAvailable::class;
+
+
         require base_path('routes/console.php');
     }
+
 }
