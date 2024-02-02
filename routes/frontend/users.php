@@ -16,19 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+ // ===================================== Index Page
+    Route::get('/',function(){
+        return view('frontend.index');
+    })->name('home');
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified','twoFactor'])->name('dashboard');
+ // ===================================== Services Page
+    Route::get('servies-page',function(){
+        return view('frontend.ServicesPage');
+    })->name('servies-page');
 
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
-
-
-// require __DIR__.'/../auth.php';
+ // ===================================== About Us
+    Route::get('about-us',function(){
+        return view('frontend.about-us');
+    })->name('about-us');

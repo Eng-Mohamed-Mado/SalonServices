@@ -78,7 +78,7 @@ Route::prefix('admin')->group(function(){
     })->name('coupon');
 
 
-    // ===================================== Coupon
+    // ===================================== Client
     Route::get('client',function(){
         return view('backend.client');
     })->name('client');
