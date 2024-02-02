@@ -11,7 +11,7 @@
 <body>
     <h1>حجز موعد جديد</h1>
 
-    @if ($errors->any())
+    @if (isset($errors) && $errors->any())
         <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)

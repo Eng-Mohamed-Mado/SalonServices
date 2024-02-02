@@ -67,7 +67,7 @@ return 'تم تحديث الحالة بنجاح.';
         $end_time = date('H:i', strtotime($start_time) + 4 * 60 * 60);
 
         if (!$this->isTimeAvailable($request->input('visit_date'), $start_time, $end_time)) {
-            return redirect()->route('test.create')->with('error', 'الوقت المحدد غير متاح. يرجى اختيار وقت آخر.');
+            return redirect()->route('test.create')->with('errors', 'الوقت المحدد غير متاح. يرجى اختيار وقت آخر.');
         }
 
         // إنشاء نموذج الحجز وحفظه

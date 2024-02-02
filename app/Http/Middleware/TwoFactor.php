@@ -24,7 +24,7 @@ class TwoFactor
             // Send To Page Write Otp Get All Method verify By Use *
             if(!$request->is('verify*'))
             {
-                return redirect()->route('verify.index');
+                return redirect()->route('otp');
             }
         }
 
